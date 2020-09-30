@@ -23,6 +23,7 @@ body {
 
 .timer {
     background-color: #173b83;
+    border-radius: 20px;
 }
 
 #headline {
@@ -85,15 +86,27 @@ a.btn {
     top: 1px;
 }
 
-@media all and (max-width: 768px) {
-    h1 {
-        font-size: 1.5rem;
+@media (max-width: 768px) {
+    p {
+        font-size: 0.82rem;
     }
     li {
-        font-size: 1.125rem;
-        padding: .75rem;
+        font-size: 0.8rem;
+        padding: .55rem;
     }
     li span {
-        font-size: 3.375rem;
+        font-size: 2.375rem;
+    }
+    .text-header {
+        font-size: 1.5rem;
+    }
+    #headline {
+        font-size: 1.25 rem;
+    }
+    .icon img {
+        margin-left: 10%;
+    }
+    .responsive {
+        font-size: 1.5rem !important;
     }
 }
