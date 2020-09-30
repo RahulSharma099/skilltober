@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Skilltober</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-white">
+                <h1><span class="text-header">SKILLTOBER BY AL</span>EXA
+                </h1>
+                <div class="timer">
+                    <h4 id="headline">SKILLTOBER'20</h4>
+                    <div id="countdown">
+                        <ul>
+                            <li><span id="days"></span>days</li>
+                            <li><span id="hours"></span>Hours</li>
+                            <li><span id="minutes"></span>Minutes</li>
+                            <li><span id="seconds"></span>Seconds</li>
+                        </ul>
+                    </div>
+                    <div class="message">
+                        <div id="content">
+                            <span class="emoji">Skilltober Over</span>
+                            <span class="emoji">🎉</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-main">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsam nobis ea doloremque at similique eos, modi recusandae animi libero suscipit accusantium tempora ipsum cupiditate quibusdam dolores nemo sed asperiores? Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit. In qui itaque error voluptates quia perspiciatis facere, odit voluptatem voluptas vel mollitia officiis nulla nesciunt perferendis dolor architecto voluptatibus placeat quidem!
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 text-white">
+                <div class="icon">
+                    <img src="./Github-png.png" alt="Github Image">
+                    <div class="text-pr ">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At consequuntur architecto non blanditiis rerum voluptate nesciunt quia ipsum! A dolores harum velit accusantium distinctio commodi minus aut quis! Ab, tempore!</p>
+                    </div>
+                </div>
+                <a class="btn" href="https://organize.mlh.io/participants/events/4826-skilltober-with-alexa">REGISTER HERE</a>
+                <!-- <button class="btn">REGISTER HERE</button> -->
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <script>
+        const second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 24,
+            birthday = "Oct 3, 2020 00:00:00";
+
+        let countDown = new Date(birthday).getTime(),
+            x = setInterval(function() {
+
+                let now = new Date().getTime(),
+                    distance = countDown - now;
+
+                document.getElementById("days").innerText = Math.floor(distance / (day)),
+                    document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                    document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                    document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+                //do something later when date is reached
+                if (distance < 0) {
+                    let headline = document.getElementById("headline"),
+                        countdown = document.getElementById("countdown"),
+                        content = document.getElementById("content");
+
+                    headline.innerText = "Hacktober Finished";
+                    countdown.style.display = "none";
+                    content.style.display = "block";
+
+                    clearInterval(x);
+                }
+
+            }, second)
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>
